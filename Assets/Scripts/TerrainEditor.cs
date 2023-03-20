@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.IO;
-using UnityEditor;
 
 public class TerrainEditor : MonoBehaviour
 {
@@ -134,25 +133,21 @@ public class TerrainEditor : MonoBehaviour
         }
     }
 
-    public void SaveDataToExcelSheet()
+    public void SaveData()
     {
-        // open the file choosing panel
-        string filePath = EditorUtility.SaveFilePanel("Save Terrain Data", "", "terrain_data", "txt");
-        
-         if (!string.IsNullOrEmpty(filePath)) {
-            using (StreamWriter writer = new StreamWriter(filePath))
-            {
-                // col title
-                string title = "Terrain Type".PadRight(15) + "Height".PadRight(15);
-                writer.WriteLine(title);
-                for (int x = 0; x < gridSize; ++x) {
-                    for (int z = 0; z < gridSize; ++z) {
-                        string line = $"({x}, {z})".PadRight(15) + cellHeights[x,z].ToString().PadRight(15);
-                        writer.WriteLine(line);
-                    }
+        string filePath = "terrain_data.txt";
+        using (StreamWriter writer = new StreamWriter(filePath))
+        {
+            // col title
+            string title = "Terrain Type".PadRight(15) + "Height".PadRight(15);
+            writer.WriteLine(title);
+            for (int x = 0; x < gridSize; ++x) {
+                for (int z = 0; z < gridSize; ++z) {
+                    string line = $"({x}, {z})".PadRight(15) + cellHeights[x,z].ToString().PadRight(15);
+                    writer.WriteLine(line);
                 }
             }
-         }
+        }
     }
 
     internal void DisableMouseEvents()
