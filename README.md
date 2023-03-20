@@ -4,6 +4,7 @@
 Please check the bin folder. The executable file is called TerrainEditor.exe.
 
 ## Controls
+- Please see the "MainScene"
 - WSAD keys to move the camera
 - Mouse cursor to rotate the camera
 - Hover over the terrain and you should see the highlight effect (dark blue color)
