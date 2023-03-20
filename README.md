@@ -11,7 +11,7 @@ Please check the bin folder. The executable file is called TerrainEditor.exe.
 - After selecting a cell, you can either click the RAISE button or press down the R key to raise the height of the cell
 - After selecting a cell, you can either click the LOWER button or press down the L key to raise the height of the cell
 - You can see the text showing the selected (x,z) of the cell and the corresponding height
-- To save the terrain data, click the SAVE button. It is stored under the project folder with a name of "terrain_data.txt"
+- To save the terrain data, click the SAVE button. It is stored under the bin folder with a name of "terrain_data.txt" if you run the exe file. If you run from the unity editor, you should see it in the project folder.
 - You should pressd down ESC key to quit the application
 
 ## Improvement
